@@ -1,12 +1,14 @@
 <?php
-// Fonction pour calculer la moyenne
 function calculerMoyenne($nombres) {
+    if (empty($nombres)) {
+        return 0; 
+    }
+
     $somme = array_sum($nombres);
     $moyenne = $somme / count($nombres);
     return $moyenne;
 }
 
-// Fonction pour regrouper les nombres supérieurs et inférieurs à la moyenne
 function regrouperNombres($nombres, $moyenne) {
     $nombresSuperieurs = [];
     $nombresInferieurs = [];
@@ -25,11 +27,12 @@ function regrouperNombres($nombres, $moyenne) {
     ];
 }
 
-$nombres = [10, 15, 20, 25, 30];
+$nombres =[10, 15, 19, 11, 17];
 $moyenne = calculerMoyenne($nombres);
 $resultat = regrouperNombres($nombres, $moyenne);
 
 echo "Moyenne : $moyenne<br>";
 echo "Nombres supérieurs à la moyenne : " . implode(", ", $resultat["superieurs"]) . "<br>";
 echo "Nombres inférieurs à la moyenne : " . implode(", ", $resultat["inferieurs"]);
+
 ?>

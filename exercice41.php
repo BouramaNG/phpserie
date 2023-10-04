@@ -2,15 +2,29 @@
 //créez un générateur de mots qui combine des 
 //préfixes et des suffixes pour former des mots fictifs.
 //ici je vais cree des tableau de prefixe et de suffixe
-$prefixe = ["Bou", "Hotaku", "Con", "haha"];
-$suffix = ["Mariste", "Mangas", "Naruto", "Rire"];
+$prefixes = ["Dakar", "Hann", "les", "Rue", "Avenue"];
+$suffixes = ["ville", "Mariste", "parcellesAssainies", "VilleMbour", "Rusfique"];
 
-function  genererMot($prefixe, $suffix)
-{
-    $prefixeAleatoire = $prefixe[array_rand($prefixe)];
-    $suffixAleatoire = $suffix[array_rand($suffix)];
-    return  $prefixeAleatoire . $suffixAleatoire;
+$prefixesCreatures = ["Dragon", "anechabot", "Licorne", "Serpent"];
+$suffixesCreatures = ["Ndiaye", "djiine", "nitougoudi", "Amadou"];
+
+function bourama($prefixes, $suffixes) {
+    $prefixAleatoire = $prefixes[array_rand($prefixes)];
+    $suffixeAleatoire = $suffixes[array_rand($suffixes)];
+    return $prefixAleatoire . $suffixeAleatoire;
 }
 
+$nomVille = bourama($prefixes, $suffixes);
+echo "Nom de ville fictif : $nomVille"."</br>";
 
+
+
+function genererNomCreatureFantastique($prefixes, $suffixes) {
+    $prefixAleatoire = $prefixes[array_rand($prefixes)];
+    $suffixeAleatoire = $suffixes[array_rand($suffixes)];
+    return $prefixAleatoire . $suffixeAleatoire;
+}
+
+$nomCreature = genererNomCreatureFantastique($prefixesCreatures, $suffixesCreatures);
+echo "Nom de créature fantastique : $nomCreature";
 ?>
